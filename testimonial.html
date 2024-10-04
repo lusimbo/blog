@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonial</title>
+    <link rel="stylesheet" href="ft2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .testimonial-container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .testimonial-slider {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial {
+            min-width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .testimonial-content {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .testimonial-position {
+            font-size: 1em;
+            color: #777;
+        }
+
+        .testimonial img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+
+        /* Controls */
+        .testimonial-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .prev-btn, .next-btn {
+            background-color: #3333335d;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            padding-right: 20px;
+            margin-right: 30px;
+        }
+
+        .prev-btn:hover, .next-btn:hover {
+            background-color: #555;
+        }
+
+        /* Dots for navigation */
+        .testimonial-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-container {
+                width: 95%;
+                padding: 20px;
+            }
+
+            .testimonial-title {
+                font-size: 2em;
+            }
+
+            .testimonial-content {
+                font-size: 1em;
+            }
+        }
+
+        /*nav*/
+
+
+         /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navigation Bar Styling */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 15px 20px;
+        }
+
+        /* Logo Styling */
+        .logo {
+            font-size: 24px;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #f39c12;
+        }
+
+        /* Links Styling */
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+            transition: color 0.3s, background 0.3s;
+        }
+
+        .nav-links li a:hover {
+            color: #f39c12;
+            background-color: #555;
+            border-radius: 5px;
+        }
+
+        /* Menu Icon for Small Screens */
+        .menu-icon {
+            display: none;
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Close Icon */
+        .close-icon {
+            display: none;
+            font-size: 28px;
+            color: white;
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            cursor: pointer;
+            z-index: 1001; /* Ensure it's above the menu */
+        }
+
+        /* Responsive Styling */
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                right: 0;
+                top: 0;
+                height: 100vh;
+                background-color: #333;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                display: none;
+                z-index: 1000;
+            }
+
+              .wrapper{
+               width: 100%
+    }
+
+            .nav-links li {
+                margin: 20px 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+                animation: slideIn 0.4s ease-in-out forwards;
+            }
+
+            @keyframes slideIn {
+                from {
+                    transform: translateX(100%);
+                }
+                to {
+                    transform: translateX(0);
+                }
+            }
+
+            .menu-icon {
+                display: block;
+                position: absolute;
+                top: 15px;
+                right: 20px;
+            }
+
+            /* Close Icon Visible in Active State */
+            .nav-links.active ~ .close-icon {
+                display: block;
+            }
+        }
+
+          .wrapper{
+        width: 98%;
+        margin: auto;
+    }
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+
+    <!-- Navigation Bar -->
+    <nav>
+        <!-- Logo -->
+        <a href="#" class="logo">Lusimbo's <span>Blog</span></a>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+
+        <!-- Menu Icon (for mobile view) -->
+        <div class="menu-icon" id="menu-icon">&#9776;</div>
+
+        <!-- Close Icon (for closing the menu) -->
+        <div class="close-icon" id="close-icon">&times;</div>
+    </nav>
+    
+
+    <div class="testimonial-container">
+        <h1 class="testimonial-title">What my Clients Say</h1>
+        <div class="testimonial-slider">
+            <!-- Testimonial 1 -->
+            <div class="testimonial">
+                <img src="image-gallery/IMG-2WA.png" alt="Client Photo">
+                <p class="testimonial-content">"Working with Lusimbo has been a fantastic experience. His attention to detail and ability to bring my vision to life exceeded my expectations. The website he built for me is both functional and visually stunning."</p>
+                <p class="testimonial-author">John Doe</p>
+                <p class="testimonial-position">CEO, Creative Inc.</p>
+            </div>
+            <!-- Testimonial 2 -->
+            <div class="testimonial">
+                <img src="image-gallery/lus.png" alt="Client Photo">
+                <p class="testimonial-content">"Lusimbo's graphic design skills are top-notch. He designed a logo and branding package for my business that perfectly captured the essence of what we do. I highly recommend him!"</p>
+                <p class="testimonial-author">Sarah Smith</p>
+                <p class="testimonial-position">Founder, BrandBoost</p>
+            </div>
+            <!-- Testimonial 3 -->
+            <div class="testimonial">
+                <img src="image-gallery/download (74).jpeg" alt="Client Photo">
+                <p class="testimonial-content">"I've worked with Lusimbo on several video editing projects, and he never disappoints. His editing skills are exceptional, and he always delivers on time. A pleasure to work with!"</p>
+                <p class="testimonial-author">Mike Johnson</p>
+                <p class="testimonial-position">Content Creator</p>
+            </div>
+            <!-- Testimonial 4 -->
+            <div class="testimonial">
+                <img src="image-gallery/WhatsApp.png" alt="Client Photo">
+                <p class="testimonial-content">"The website development services provided by Lusimbo were excellent. He was very communicative throughout the project and ensured everything was done to my specifications."</p>
+                <p class="testimonial-author">Jessica Lee</p>
+                <p class="testimonial-position">Marketing Manager, TechCo</p>
+            </div>
+            <!-- Testimonial 5 -->
+            <div class="testimonial">
+                <img src="image-gallery/IMG_20201_150306-removebg-preview.png" alt="Client Photo">
+                <p class="testimonial-content">"Lusimbo's creativity and professionalism are unparalleled. I hired him for a web redesign, and the final result was both aesthetically pleasing and highly functional. Highly recommended!"</p>
+                <p class="testimonial-author">David Brown</p>
+                <p class="testimonial-position">Founder, WebWorks</p>
+            </div>
+            <!-- Testimonial 6 -->
+            <div class="testimonial">
+                <img src="image-gallery/WIN_20240818_17_05_54_Pro.jpg" alt="Client Photo">
+                <p class="testimonial-content">"The graphic design work Lusimbo did for me was fantastic! He captured exactly what I wanted in my branding materials. I'm so happy with the outcome!"</p>
+                <p class="testimonial-author">Emily White</p>
+                <p class="testimonial-position">Owner, Sweet Treats</p>
+            </div>
+        </div>
+
+        <!-- Slider controls -->
+        <div class="testimonial-controls">
+            <button class="prev-btn" onclick="prevSlide()"> < </button>
+            <button class="next-btn" onclick="nextSlide()"> > </button>
+        </div>
+
+        <!-- Dots indicator -->
+        <div class="testimonial-dots">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+        </div>
+    </div>
+
+
+    <footer>
+    <div class="footer-container">
+        <!-- Contact Information -->
+        <div class="footer-section contact-info">
+            <h3>Contact Information</h3>
+            <p><i class="fas fa-map-marker-alt"></i> 984-50400 Busia</p>
+            <p><i class="fas fa-phone-alt"></i> +254 114 266 824</p>
+            <p><i class="fas fa-envelope"></i> lusimboelijah@gmail.com</p>
+            <p><i class="fas fa-clock"></i> Open 24/7</p>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="footer-section footer-nav">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            <li><a href="cart.html">Request for Service</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="testimonial.html">Testimonial</a></li>
+            </ul>
+        </div>
+
+        <!-- Privacy and Legal Information -->
+        <div class="footer-section legal-info">
+            <h3>Legal</h3>
+            <ul>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+                <li><a href="cookies.html">Cookie Policy</a></li>
+            </ul>
+        </div>
+
+        <!-- Call to Action (CTA) -->
+        <div class="footer-section cta">
+            <h3>Stay Connected</h3>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Sign Up</button>
+            </form>
+            <h3>Follow Me</h3>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61565844088548"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/lusimbo-elijah-a9baa0229/"><i class="fab fa-linkedin"></i></a>
+                <a href="https://wa.me/254114266824"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+
+        <!-- Payment Methods (for e-commerce) -->
+        <div class="footer-section payment-methods">
+            <h3>Accepted Payments</h3>
+            <div class="payment-icons">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-paypal"></i>
+                <i class="fab fa-cc-amex"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sitemap -->
+    <div class="footer-sitemap">
+        <h3>Sitemap</h3>
+        <ul>
+           <li><a href="index.html">Home</a></li>
+            <li><a href="cart.html">Request for Service</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="testimonial.html">Testimonial</a></li>
+        </ul>
+    </div>
+
+    <!-- Copyright & Branding -->
+    <div class="footer-bottom">
+        <p>© 2024 Lusimbo's Blog. All rights reserved.</p>
+        <a href="#" class="back-to-top">Back to Top</a>
+    </div>
+</footer>
+
+</div>
+
+    
+
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function nextSlide() {
+            showSlides(slideIndex += 1);
+        }
+
+        function prevSlide() {
+            showSlides(slideIndex -= 1);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let slides = document.querySelectorAll('.testimonial');
+            let dots = document.querySelectorAll('.dot');
+            if (n > slides.length) { slideIndex = 1; }
+            if (n < 1) { slideIndex = slides.length; }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const navLinks = document.getElementById('nav-links');
+
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuIcon.style.display = 'none';
+            closeIcon.style.display = 'block';
+        });
+
+        closeIcon.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuIcon.style.display = 'block';
+            closeIcon.style.display = 'none';
+        });
+
+
+
+    </script>
+
+</body>
+</html>

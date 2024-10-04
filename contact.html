@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact page</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navigation Bar Styling */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 15px 20px;
+        }
+
+        /* Logo Styling */
+        .logo {
+            font-size: 24px;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #f39c12;
+        }
+
+        /* Links Styling */
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+            transition: color 0.3s, background 0.3s;
+        }
+
+        .nav-links li a:hover {
+            color: #f39c12;
+            background-color: #555;
+            border-radius: 5px;
+        }
+
+        /* Menu Icon for Small Screens */
+        .menu-icon {
+            display: none;
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Close Icon */
+        .close-icon {
+            display: none;
+            font-size: 28px;
+            color: white;
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            cursor: pointer;
+            z-index: 1001; /* Ensure it's above the menu */
+        }
+
+        /* Responsive Styling */
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                right: 0;
+                top: 0;
+                height: 100vh;
+                background-color: #333;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                display: none;
+                z-index: 1000;
+            }
+
+             .wrapper{
+            width: 98%;
+        }
+
+            .intro-p{
+                font-size: 1em;
+                padding-top: 30px;
+            }
+
+            .container{
+                width: 100%;
+            }
+
+            .nav-links li {
+                margin: 20px 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+                animation: slideIn 0.4s ease-in-out forwards;
+            }
+
+            @keyframes slideIn {
+                from {
+                    transform: translateX(100%);
+                }
+                to {
+                    transform: translateX(0);
+                }
+            }
+
+            .menu-icon {
+                display: block;
+                position: absolute;
+                top: 15px;
+                right: 20px;
+            }
+
+            /* Close Icon Visible in Active State */
+            .nav-links.active ~ .close-icon {
+                display: block;
+            }
+        }
+
+        .wrapper{
+            width: 98%;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+
+    <!-- Navigation Bar -->
+    <nav>
+        <!-- Logo -->
+        <a href="#" class="logo">Lusimbo's <span>Blog</span></a>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+
+        <!-- Menu Icon (for mobile view) -->
+        <div class="menu-icon" id="menu-icon">&#9776;</div>
+
+        <!-- Close Icon (for closing the menu) -->
+        <div class="close-icon" id="close-icon">&times;</div>
+    </nav>
+
+
+    <div class="main-content" id="clearfix"></div>
+        <div class="intro">
+            <p class="intro-p">
+                Have a project in mind or just want to say hello? I’d love to hear from you! Whether you're looking for web development, graphic design, or video editing services, I’m here to help you bring your ideas to life.
+            </p>
+        </div>
+        <div class="cont-body" id="clearfix">
+            
+        <div class="cont1-body">
+
+        <div class="container">
+        <div id="contact-form" class="form-container">
+            <h2>Contact Me</h2>
+            <form action="#" method="POST">
+                <div class="input-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="input-group">
+                    <label for="title">Title</label>
+                    <select id="title" name="title">
+                        <option value="Mr.">Mr.</option>
+                        <option value="Ms.">Ms.</option>
+                        <option value="Mrs.">Mrs.</option>
+                        <option value="Dr.">Dr.</option>
+                        <option value="Prof.">Prof.</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="title">Choose Service</label>
+                    <select id="title" name="title">
+                        <option value="Full-Stack Web Development">Full-Stack Web Development</option>
+                        <option value="Graphic Design">Graphic Design</option>
+                        <option value="Video Editing">Video Editing</option>
+                        
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="Services">Services</label>
+                    <input type="text" id="Services" name="Services" placeholder="Input your service">
+                </div>
+                <div class="input-group">
+                    <label for="quantity">Number of services needed</label>
+                    <input type="number" id="quantity" name="quantity" min="1" required>
+                </div>
+                <div class="input-group">
+                    <label for="Project Duration">Project Duration</label>
+                    <select id="Project Duration" name="Project Duration">
+                        <option value="months">Within months</option>
+                        <option value="hours"> In Days/Hours(extra charges may apply)</option>
+                    </select>
+                </div>
+                <div class="input-group" id="delivery-address" style="display: none;">
+                    <label for="address">Your Address</label>
+                    <textarea id="address" name="address"></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="payment-method">Payment Method</label>
+                    <select id="payment-method" name="payment-method">
+                        <option value="credit-card">Credit Card</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="bank-transfer">Bank Transfer</option>
+                        <option value="cash-on-delivery">Mpesa</option>
+                         <option value="cash-on-delivery">Airtel Money</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="additional-info">Additional Information</label>
+                    <textarea id="additional-info" name="additional-info"></textarea>
+                </div>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+            </div>
+            <!--
+            <div class="cont-img">
+                img
+            </div>
+            -->
+        </div>
+        <div class="cont-body2">
+            <h3 class="h3-2"><mark style="background-color: rgba(255, 255, 255, 0.566); padding: 20px; border-radius: 5px;">Start your journey with me</mark></h3>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+     <footer>
+    <div class="footer-container">
+        <!-- Contact Information -->
+        <div class="footer-section contact-info">
+            <h3>Contact Information</h3>
+            <p><i class="fas fa-map-marker-alt"></i> 984-50400 Busia</p>
+            <p><i class="fas fa-phone-alt"></i> +254 114 266 824</p>
+            <p><i class="fas fa-envelope"></i> lusimboelijah@gmail.com</p>
+            <p><i class="fas fa-clock"></i> Open 24/7</p>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="footer-section footer-nav">
+            <h3>Quick Links</h3>
+            <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cart.html">Request for Service</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="testimonial.html">Testimonial</a></li>
+            </ul>
+        </div>
+
+        <!-- Privacy and Legal Information -->
+        <div class="footer-section legal-info">
+            <h3>Legal</h3>
+            <ul>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+                <li><a href="cookies.html">Cookie Policy</a></li>
+            </ul>
+        </div>
+
+        <!-- Call to Action (CTA) -->
+        <div class="footer-section cta">
+            <h3>Stay Connected</h3>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Sign Up</button>
+            </form>
+            <h3>Follow Me</h3>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61565844088548"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/lusimbo-elijah-a9baa0229/"><i class="fab fa-linkedin"></i></a>
+                <a href="https://wa.me/254114266824"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+
+        <!-- Payment Methods (for e-commerce) -->
+        <div class="footer-section payment-methods">
+            <h3>Accepted Payments</h3>
+            <div class="payment-icons">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-paypal"></i>
+                <i class="fab fa-cc-amex"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sitemap -->
+    <div class="footer-sitemap">
+        <h3>Sitemap</h3>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cart.html">Request for Service</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="testimonial.html">Testimonial</a></li>
+        </ul>
+    </div>
+
+
+    <!-- Copyright & Branding -->
+    <div class="footer-bottom">
+        <p>© 2024 Lusimbo's Blog. All rights reserved.</p>
+        <a href="#" class="back-to-top">Back to Top</a>
+    </div>
+</footer>
+
+
+
+    <!-- JavaScript to handle the mobile menu toggle -->
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const navLinks = document.getElementById('nav-links');
+
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuIcon.style.display = 'none';
+            closeIcon.style.display = 'block';
+        });
+
+        closeIcon.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuIcon.style.display = 'block';
+            closeIcon.style.display = 'none';
+        });
+
+
+
+        document.getElementById('delivery-option').addEventListener('change', function() {
+            const deliveryAddress = document.getElementById('delivery-address');
+            if (this.value === 'delivery') {
+                deliveryAddress.style.display = 'block';
+            } else {
+                deliveryAddress.style.display = 'none';
+            }
+        });
+
+
+
+    </script>
+
+</body>
+</html>

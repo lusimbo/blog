@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs</title>
+    <link rel="stylesheet" href="faq.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navigation Bar Styling */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 15px 20px;
+        }
+
+        /* Logo Styling */
+        .logo {
+            font-size: 24px;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #f39c12;
+        }
+
+        /* Links Styling */
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+            transition: color 0.3s, background 0.3s;
+        }
+
+        .nav-links li a:hover {
+            color: #f39c12;
+            background-color: #555;
+            border-radius: 5px;
+        }
+
+        /* Menu Icon for Small Screens */
+        .menu-icon {
+            display: none;
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Close Icon */
+        .close-icon {
+            display: none;
+            font-size: 28px;
+            color: white;
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            cursor: pointer;
+            z-index: 1001; /* Ensure it's above the menu */
+        }
+
+        /* Responsive Styling */
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                right: 0;
+                top: 0;
+                height: 100vh;
+                background-color: #333;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                display: none;
+                z-index: 1000;
+            }
+
+            .nav-links li {
+                margin: 20px 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+                animation: slideIn 0.4s ease-in-out forwards;
+            }
+
+            @keyframes slideIn {
+                from {
+                    transform: translateX(100%);
+                }
+                to {
+                    transform: translateX(0);
+                }
+            }
+
+            .menu-icon {
+                display: block;
+                position: absolute;
+                top: 15px;
+                right: 20px;
+            }
+
+            /* Close Icon Visible in Active State */
+            .nav-links.active ~ .close-icon {
+                display: block;
+            }
+        }
+
+        /*css for faq*/
+
+         .main-faq{
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100px;
+        }
+
+        .faq-container {
+            width: 80%;
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .faq-title {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .faq-question {
+            cursor: pointer;
+            font-size: 1.2em;
+            padding: 15px;
+            margin: 0;
+            color: #333;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: #f0f0f0;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            padding: 0 15px;
+            font-size: 1em;
+            color: #666;
+        }
+
+        .faq-answer.open {
+            max-height: 500px; /* Adjust this value depending on the content */
+            padding: 15px;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: "-";
+            float: right;
+            font-size: 1.5em;
+            line-height: 1.2;
+        }
+
+        .faq-item .faq-question::after {
+            content: "+";
+            float: right;
+            font-size: 1.5em;
+            line-height: 1.2;
+        }
+
+        @media (max-width: 768px) {
+            .faq-container {
+                width: 95%;
+            }
+
+            .faq-title {
+                font-size: 1.8em;
+            }
+
+            .faq-question {
+                font-size: 1.1em;
+            }
+
+            .faq-answer {
+                font-size: 0.9em;
+            }
+
+             .wrapper{
+               width: 100%
+    }
+        }
+
+
+        .wrapper{
+        width: 98%;
+        margin: auto;
+    }
+
+
+
+    </style>
+
+</head>
+<body>
+
+    <div class="wrapper">
+
+
+    <!-- Navigation Bar -->
+    <nav>
+        <!-- Logo -->
+        <a href="#" class="logo">Lusimbo's <span>Blog</span></a>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+
+        <!-- Menu Icon (for mobile view) -->
+        <div class="menu-icon" id="menu-icon">&#9776;</div>
+
+        <!-- Close Icon (for closing the menu) -->
+        <div class="close-icon" id="close-icon">&times;</div>
+    </nav>
+
+  
+
+          <div class="main-faq"></div>
+
+        <div class="faq-container">
+        <h1 class="faq-title">Frequently Asked Questions</h1>
+
+        <!-- FAQ Item 1 -->
+        <div class="faq-item">
+            <h2 class="faq-question">What services do you offer?</h2>
+            <div class="faq-answer">
+                <p>I offer a wide range of services, including full-stack web development, graphic design, and video editing. From creating responsive websites to producing high-quality visuals and video content, I tailor my services to meet your specific needs.</p>
+            </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="faq-item">
+            <h2 class="faq-question">What technologies do you work with?</h2>
+            <div class="faq-answer">
+                <p>I am proficient in HTML, CSS, JavaScript, PHP, Python, React.js, and Node.js for web development. For graphic design and video editing, I use Adobe Photoshop, Illustrator, and Premiere Pro.</p>
+            </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="faq-item">
+            <h2 class="faq-question">Can you help with branding and logo design?</h2>
+            <div class="faq-answer">
+                <p>Yes, I specialize in graphic design services, which include creating unique and memorable logos and brand identities that resonate with your audience.</p>
+            </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="faq-item">
+            <h2 class="faq-question">Do you offer video editing services for social media content?</h2>
+            <div class="faq-answer">
+                <p>Yes, I provide video editing services tailored for social media platforms such as Instagram, YouTube, and Facebook, ensuring your content is engaging and optimized for each platform's requirements.</p>
+            </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="faq-item">
+            <h2 class="faq-question">How long does it take to complete a project?</h2>
+            <div class="faq-answer">
+                <p>The time required to complete a project depends on its complexity and scope. Simple projects like logo designs may take a few days, while more complex projects like website development can take a few weeks. I will always provide an estimated timeline after discussing the project details.</p>
+            </div>
+        </div>
+
+        <!-- FAQ Item 6 -->
+        <div class="faq-item">
+            <h2 class="faq-question">What are your payment terms?</h2>
+            <div class="faq-answer">
+                <p>I usually require a 50% deposit upfront, with the remainder due upon project completion. However, I'm flexible and willing to discuss payment terms based on the project's size and scope.</p>
+            </div>
+        </div>
+
+        <!-- FAQ Item 7 -->
+        <div class="faq-item">
+            <h2 class="faq-question">Do you provide ongoing support after the project is completed?</h2>
+            <div class="faq-answer">
+                <p>Yes, I offer ongoing support and maintenance services for websites and other projects. This ensures everything continues to function smoothly and any necessary updates are handled promptly.</p>
+            </div>
+        </div>
+
+        <!-- FAQ Item 8 -->
+        <div class="faq-item">
+            <h2 class="faq-question">How can I get started with a project?</h2>
+            <div class="faq-answer">
+                <p>You can contact me through my website’s contact form or send me an email. We will discuss your project requirements, timeline, and budget, and I will provide a detailed proposal.</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    </div>
+        
+    
+
+
+
+
+    <footer>
+    <div class="footer-container">
+        <!-- Contact Information -->
+        <div class="footer-section contact-info">
+            <h3>Contact Information</h3>
+            <p><i class="fas fa-map-marker-alt"></i> 984-50400 Busia</p>
+            <p><i class="fas fa-phone-alt"></i> +254 114 266 824</p>
+            <p><i class="fas fa-envelope"></i> lusimboelijah@gmail.com</p>
+            <p><i class="fas fa-clock"></i> Open 24/7</p>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="footer-section footer-nav">
+            <h3>Quick Links</h3>
+            <ul>
+                 <li><a href="index.html">Home</a></li>
+            <li><a href="cart.html">Request for Service</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="testimonial.html">Testimonial</a></li>
+            </ul>
+        </div>
+
+        <!-- Privacy and Legal Information -->
+        <div class="footer-section legal-info">
+            <h3>Legal</h3>
+            <ul>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+                <li><a href="cookies.html">Cookie Policy</a></li>
+            </ul>
+        </div>
+
+        <!-- Call to Action (CTA) -->
+        <div class="footer-section cta">
+            <h3>Stay Connected</h3>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Sign Up</button>
+            </form>
+            <h3>Follow Me</h3>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61565844088548"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/lusimbo-elijah-a9baa0229/"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+
+        <!-- Payment Methods (for e-commerce) -->
+        <div class="footer-section payment-methods">
+            <h3>Accepted Payments</h3>
+            <div class="payment-icons">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-paypal"></i>
+                <i class="fab fa-cc-amex"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sitemap -->
+    <div class="footer-sitemap">
+        <h3>Sitemap</h3>
+        <ul>
+             <li><a href="index.html">Home</a></li>
+            <li><a href="cart.html">Request for Service</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="testimonial.html">Testimonial</a></li>
+        </ul>
+    </div>
+
+    <!-- Copyright & Branding -->
+    <div class="footer-bottom">
+        <p>© 2024 Lusimbo's Blog. All rights reserved.</p>
+        <a href="#" class="back-to-top">Back to Top</a>
+    </div>
+</footer>
+
+</div>
+
+    <!-- JavaScript to handle the mobile menu toggle -->
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const navLinks = document.getElementById('nav-links');
+
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuIcon.style.display = 'none';
+            closeIcon.style.display = 'block';
+        });
+
+        closeIcon.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuIcon.style.display = 'block';
+            closeIcon.style.display = 'none';
+        });
+
+
+
+
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('open');
+                const answer = item.querySelector('.faq-answer');
+                answer.classList.toggle('open');
+            });
+        });
+
+
+
+    </script>
+
+    
+</body>
+</html>

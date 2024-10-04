@@ -1,0 +1,484 @@
+.main-content{
+    width: 100%;
+    min-height: 200px;
+    background-color: transparent;
+    margin-bottom: 10px;
+    
+}
+
+#cleafix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.body1{
+    width: 100%;
+    min-height: 200px;
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 5px;
+}
+
+.body2{
+    width: 100%;
+    min-height: 300px;
+    background-color: transparent;
+    margin-bottom: 5px;
+}
+
+.body3{
+    width: 100%;
+    min-height: 300px;
+    background-color: transparent;
+    margin: auto;
+    
+}
+
+.body3-1{
+    width: 50%;
+    min-height: 300px;
+    background-color: transparent;
+    float: left;
+}
+.body3-2{
+    width: 50%;
+    min-height: 300px;
+    background-color: rgba(10, 10, 86, 0.732);
+    float: right;
+    padding-bottom: 170px;
+    color: white;
+}
+
+.body4{
+    width: 100%;
+    min-height: 300px;
+    background-color: transparent;
+    margin-top: 5px;
+    margin: auto;
+    margin-bottom: 5px;
+}
+.body-center{
+    width: 70%;
+    min-height: 300px;
+    background-image: url("ui/Teens enjoying outdoors_1726235991.jpg");
+    margin: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    line-height: 30px;
+    text-align: center;
+    
+}
+
+.body5{
+    width: 100%;
+    min-height: 300px;
+    background-color: transparent;
+    margin-top: 5px;
+    margin: auto;
+    margin-bottom: 5px;
+}
+.body5-content{
+    width: 65%;
+    min-height: 300px;
+    background-color: transparent;
+    float: left;
+}
+.body6{
+    width: 100%;
+    min-height: 300px;
+    background-color: rgb(6, 6, 64);
+    margin-top: 5px;
+    margin: auto;
+    margin-bottom: 5px;
+    color: white;
+    animation: fadeIn 1s ease-in;
+    transition: transform 0.3s ease;
+    transition: transform 0.3s;
+}
+.body6-content{
+    width: 65%;
+    min-height: 300px;
+    background-color: transparent;
+    float: right;
+    padding-left: 10px;
+    animation: fadeIn 1s ease-in;
+    transition: transform 0.3s ease;
+     transition: transform 0.3s;
+}
+
+.p1-body3{
+    padding-top: 70px;
+    padding-right: 10px;
+    font-size: 1.3em;
+    padding-left: 10px;
+   
+}
+
+.body3-1{
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.body3-2{
+    content-align: justify;
+    align-items: center;
+    padding-top: 80px;
+
+}
+
+.body3-1-img{
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+
+    
+}
+#clearfix::after{
+    content: "";
+    clear: both;
+    display: block;
+}
+.h2-body5{
+    text-align: center;
+    padding-top: 30px;
+}
+.p1-body5{
+    padding-top: 50px;
+    padding-left: 20px;
+}
+
+.h1-body6{
+    text-align: center;
+    padding-top: 30px;
+}
+.p1-body6{
+    padding-top: 50px;
+    padding-left: 20px;
+    font-size: 1.2em;
+    padding-bottom: 20px;
+}
+
+.p1-body5{
+    font-size: 1.2em;
+}
+
+
+
+
+/*--------footer--------*/
+
+
+
+/* Footer Base Styling */
+footer {
+    background-color: #202020;
+    color: #fff;
+    padding: 60px 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 40px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 0 15px;
+}
+
+.footer-section h3 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.footer-section h3::after {
+    content: '';
+    width: 50px;
+    height: 2px;
+    background-color: #ff6b6b;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+}
+
+.footer-section p, 
+.footer-section ul, 
+.footer-section form {
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 10px 0;
+}
+
+.footer-section ul li a {
+    color: #b5b5b5;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #ff6b6b;
+}
+
+/* Social Media & Payment Icons */
+.footer-section .social-icons a,
+.footer-section .payment-icons i {
+    font-size: 20px;
+    color: #b5b5b5;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-section .social-icons a:hover,
+.footer-section .payment-icons i:hover {
+    color: #ff6b6b;
+}
+
+/* Newsletter Form */
+.newsletter-form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.newsletter-form input {
+    padding: 10px;
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 14px;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+
+.newsletter-form button {
+    background-color: #ff6b6b;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: #ff3838;
+}
+
+/* Sitemap */
+.footer-sitemap {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.footer-sitemap h3 {
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.footer-sitemap ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-sitemap ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-sitemap ul li a {
+    color: #b5b5b5;
+    text-decoration: none;
+}
+
+.footer-sitemap ul li a:hover {
+    color: #ff6b6b;
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #333;
+    padding: 20px 0;
+}
+
+.footer-bottom p {
+    color: #b5b5b5;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.back-to-top {
+    display: inline-block;
+    color: #b5b5b5;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.back-to-top:hover {
+    color: #ff6b6b;
+}
+
+/* Animations & Transitions */
+footer h3::after {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.4s ease;
+}
+
+footer h3:hover::after {
+    transform: scaleX(1);
+}
+
+footer .footer-section a {
+    position: relative;
+}
+
+footer .footer-section a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #ff6b6b;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+footer .footer-section a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+}
+
+.p-body1{
+    padding-top: 40px;
+    font-size: 1.2em;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.h1-body2{
+    text-align: center;
+    padding-top: 10px;
+}
+.p1-body2{
+    padding-top: 40px;
+    font-size: 1.2em;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+.body-blog{
+    width: 100%;
+    min-height: 70px;
+    background-color: rgba(6, 6, 72, 0.311);
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.body4{
+    margin-top: 5px;
+}
+
+.wrapper{
+    width: 98%;
+    min-height: 300px;
+    margin: auto;
+}
+
+@media (max-width: 800px){
+    .body3-1{
+        display: none;
+    }
+    .body3-2{
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px){
+    .body6-content{
+        width: 100%;
+    }
+   
+}
+
+/*-----button----*/
+
+@media (max-width: 480px) {
+    .btn {
+        font-size: 0.9em;
+        padding: 6px 10px;
+    }
+}
+
+        /* Responsive Styles */
+@media (max-width: 768px) {
+
+
+    .btn {
+        font-size: 1em;
+        padding: 8px 15px;
+    }
+}
+
+        .btn:hover {
+            background-color: #45a049;
+            transform: translateY(-3px);
+        }
+
+        /* Animation Keyframes */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+                /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 10px 80px;
+            background-color: #4caf50;
+            color: #fff;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+.body-button{
+    text-align: center;
+}

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lusimbo's Blog</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navigation Bar Styling */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 15px 20px;
+        }
+
+        /* Logo Styling */
+        .logo {
+            font-size: 24px;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #f39c12;
+        }
+
+        /* Links Styling */
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+            transition: color 0.3s, background 0.3s;
+        }
+
+        .nav-links li a:hover {
+            color: #f39c12;
+            background-color: #555;
+            border-radius: 5px;
+        }
+
+        /* Menu Icon for Small Screens */
+        .menu-icon {
+            display: none;
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Close Icon */
+        .close-icon {
+            display: none;
+            font-size: 28px;
+            color: white;
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            cursor: pointer;
+            z-index: 1001; /* Ensure it's above the menu */
+        }
+
+        /* Responsive Styling */
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                right: 0;
+                top: 0;
+                height: 100vh;
+                background-color: #333;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                display: none;
+                z-index: 1000;
+            }
+
+            .nav-links li {
+                margin: 20px 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+                animation: slideIn 0.4s ease-in-out forwards;
+            }
+
+            @keyframes slideIn {
+                from {
+                    transform: translateX(100%);
+                }
+                to {
+                    transform: translateX(0);
+                }
+            }
+
+            .menu-icon {
+                display: block;
+                position: absolute;
+                top: 15px;
+                right: 20px;
+            }
+
+            /* Close Icon Visible in Active State */
+            .nav-links.active ~ .close-icon {
+                display: block;
+            }
+        }
+
+
+        /*landing page*/
+
+
+         /* Global styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        /* Landing Page Section */
+        .landing-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-image: url("pexels-pixabay-268533.jpg");
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        /* Background overlay */
+        .landing-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("pexels-pixabay-268533.jpg"); /* Dark overlay */
+            z-index: 0;
+        }
+
+        .landing-content {
+            z-index: 1;
+        }
+
+        /* Main heading */
+        .landing-title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        /* Description */
+        .landing-description {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            max-width: 800px;
+            animation: fadeInUp 2s ease-in-out;
+        }
+
+        /* Call-to-Action Button */
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #28a745;
+            color: white;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            font-size: 1.2rem;
+            animation: fadeInUp 2.5s ease-in-out;
+        }
+
+        .cta-button:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Keyframes for fade-in animation */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            .landing-title {
+                font-size: 2.5rem;
+            }
+
+            .landing-description {
+                font-size: 1.2rem;
+            }
+
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+
+                .wrapper{
+            width: 100%;
+            
+        }
+   
+        }
+
+        @media (max-width: 480px) {
+            .landing-title {
+                font-size: 2rem;
+            }
+
+            .landing-description {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+
+        .lnd-pg{
+            background-image: url("pexels-pixabay-268533.jpg");
+            
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+
+    <!-- Navigation Bar -->
+    <nav>
+        <!-- Logo -->
+        <a href="#" class="logo">Lusimbo's <span>Blog</span></a>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+
+        <!-- Menu Icon (for mobile view) -->
+        <div class="menu-icon" id="menu-icon">&#9776;</div>
+
+        <!-- Close Icon (for closing the menu) -->
+        <div class="close-icon" id="close-icon">&times;</div>
+    </nav>
+
+     <!-- Blog Landing Section -->
+    
+          <div class="lnd-pg">
+
+        <section class="landing-section">
+        <div class="landing-content">
+            <h1 class="landing-title">Welcome to Lusimbo's Blog</h1>
+            <p class="landing-description">
+                Explore the world of web development, graphic design, and video production through insightful articles, tutorials, and project showcases. Dive into the creative and technical world with me.
+            </p>
+            <a href="blog.html" class="cta-button">Explore the Blog</a>
+        </div>
+    </section>
+
+    </div>
+
+
+    
+
+
+    <footer>
+    <div class="footer-container">
+        <!-- Contact Information -->
+        <div class="footer-section contact-info">
+            <h3>Contact Information</h3>
+            <p><i class="fas fa-map-marker-alt"></i> 984-50400 Busia</p>
+            <p><i class="fas fa-phone-alt"></i> +254 114 266 824</p>
+            <p><i class="fas fa-envelope"></i> lusimboelijah@gmail.com</p>
+            <p><i class="fas fa-clock"></i> Open 24/7</p>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="footer-section footer-nav">
+            <h3>Quick Links</h3>
+         <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cart.html">Request for Service</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="testimonial.html">Testimonial</a></li>
+         </ul>
+        </div>
+
+        <!-- Privacy and Legal Information -->
+        <div class="footer-section legal-info">
+            <h3>Legal</h3>
+            <ul>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+                <li><a href="cookies.html">Cookie Policy</a></li>
+            </ul>
+        </div>
+
+        <!-- Call to Action (CTA) -->
+        <div class="footer-section cta">
+            <h3>Stay Connected</h3>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Sign Up</button>
+            </form>
+            <h3>Follow Me</h3>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61565844088548"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/lusimbo-elijah-a9baa0229/"><i class="fab fa-linkedin"></i></a>
+                <a href="https://wa.me/254114266824"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+
+        <!-- Payment Methods (for e-commerce) -->
+        <div class="footer-section payment-methods">
+            <h3>Accepted Payments</h3>
+            <div class="payment-icons">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-paypal"></i>
+                <i class="fab fa-cc-amex"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sitemap -->
+    <div class="footer-sitemap">
+        <h3>Sitemap</h3>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cart.html">Request for Service</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="testimonial.html">Testimonial</a></li>
+        </ul>
+    </div>
+
+    <!-- Copyright & Branding -->
+    <div class="footer-bottom">
+        <p>© 2024 Lusimbo's Blog. All rights reserved.</p>
+        <a href="#" class="back-to-top">Back to Top</a>
+    </div>
+</footer>
+
+</div>
+
+
+
+
+    <!-- JavaScript to handle the mobile menu toggle -->
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const navLinks = document.getElementById('nav-links');
+
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuIcon.style.display = 'none';
+            closeIcon.style.display = 'block';
+        });
+
+        closeIcon.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuIcon.style.display = 'block';
+            closeIcon.style.display = 'none';
+        });
+    </script>
+
+</body>
+</html>

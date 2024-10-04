@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stunning Cart Button</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Button Styling */
+        .stunning-button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .stunning-button:hover {
+            background-color: #218838;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .stunning-button:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: transform 0.4s ease;
+            transform: translateX(-100%);
+        }
+
+        .stunning-button:hover:before {
+            transform: translateX(0);
+        }
+
+        .stunning-button span {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Cart Section Styling */
+        .cart-container {
+            width: 80%;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Stunning Button -->
+    <div style="text-align: center; margin-top: 50px;">
+        <a href="#cart-section">
+            <button class="stunning-button"><span>Go to Cart</span></button>
+        </a>
+    </div>
+
+    <!-- Placeholder Content (for demo) -->
+    <div style="height: 50px; text-align: center; padding: 20px;">
+        <h1>Explore My Services!</h1>
+        <p>Click the button to view the available services.</p>
+    </div>
+
+    hello
+
+</body>
+</html>

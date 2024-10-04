@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Lusimbo's Blog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ft2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navigation Bar Styling */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 15px 20px;
+        }
+
+        /* Logo Styling */
+        .logo {
+            font-size: 24px;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #f39c12;
+        }
+
+        /* Links Styling */
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+            transition: color 0.3s, background 0.3s;
+        }
+
+        .nav-links li a:hover {
+            color: #f39c12;
+            background-color: #555;
+            border-radius: 5px;
+        }
+
+        /* Menu Icon for Small Screens */
+        .menu-icon {
+            display: none;
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Close Icon */
+        .close-icon {
+            display: none;
+            font-size: 28px;
+            color: white;
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            cursor: pointer;
+            z-index: 1001; /* Ensure it's above the menu */
+        }
+
+        /* Responsive Styling */
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                right: 0;
+                top: 0;
+                height: 100vh;
+                background-color: #333;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                display: none;
+                z-index: 1000;
+            }
+
+                .wrapper{
+            width: 100%;
+            
+        }
+   
+
+            .body4 li mark:hover{
+            color: red;
+            font-size: 1.3em;
+        }
+
+            .nav-links li {
+                margin: 20px 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+                animation: slideIn 0.4s ease-in-out forwards;
+            }
+
+            @keyframes slideIn {
+                from {
+                    transform: translateX(100%);
+                }
+                to {
+                    transform: translateX(0);
+                }
+            }
+
+            .menu-icon {
+                display: block;
+                position: absolute;
+                top: 15px;
+                right: 20px;
+            }
+
+            /* Close Icon Visible in Active State */
+            .nav-links.active ~ .close-icon {
+                display: block;
+            }
+        }
+
+        .body4 li mark:hover{
+            color: red;
+            font-size: 1.5em;
+            background-color: white;
+        }
+
+        @media screen and (max-width: 768px){
+            .body-center{
+                width: 100%;
+            }
+            .body5-content{
+                width: 100%;
+            }
+        }
+
+        .body4{
+            background-color: rgb(2, 2, 32);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+
+    <!-- Navigation Bar -->
+    <nav>
+        <!-- Logo -->
+        <a href="#" class="logo">Lusimbo's <span>Blog</span></a>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            
+        </ul>
+
+        <!-- Menu Icon (for mobile view) -->
+        <div class="menu-icon" id="menu-icon">&#9776;</div>
+
+        <!-- Close Icon (for closing the menu) -->
+        <div class="close-icon" id="close-icon">&times;</div>
+    </nav>
+
+   
+
+
+    <div class="main-content" id="clearfix">
+
+        <div class="body1">
+            <p class="p-body1">
+                 "Hello! I'm Lusimbo Elijah, a passionate Full-Stack Web Developer, Graphic Designer, and Video Editor with a love for creating stunning and functional digital experiences. With years of hands-on experience, I have honed my skills in bringing creative visions to life through dynamic websites, engaging designs, and visually captivating videos."
+            </p>
+        </div>
+        <div class="body2">
+            <h1 class="h1-body2">
+                WHAT I DO
+            </h1>
+            <p class="p1-body2">
+                "My journey in tech and creativity began with my passion for problem-solving and artistic expression. Over the years, I've combined my skills in HTML, CSS, JavaScript, PHP, Python, and React.js with my talents in Adobe Photoshop, Illustrator, and Premiere Pro to build both practical and visually appealing solutions for my clients. Whether it's designing a sleek website, crafting a memorable logo, or editing a video that tells a compelling story, I bring a personal touch and technical expertise to every project."
+            </p>
+        </div>
+        <div class="body-blog">
+            <h1 class="h1-blog">
+                Why I Started this Blog
+            </h1>
+        </div>
+        <div class="body3" id="clearfix">
+
+            <div class="body3-1" id="clearfix">
+                <img class="body3-1-img" src="image-gallery/pexels11.png" alt="lusimbo's image">
+            </div>
+            <div class="body3-2">
+                <p class="p1-body3">
+                     "I started Lusimbo's Blog as a platform to share my projects, insights, and tips for anyone interested in the world of web development, graphic design, and video production. Here, you’ll find tutorials, behind-the-scenes looks at my work, and inspiration for how digital tools can create something impactful."
+                </p>
+            </div>
+
+        </div>
+        <div class="body4" id="clearfix">
+            <div class="body-center">
+
+               <li style="line-height: 300px; list-style: none; text-decoration: none; "><a style="text-decoration: none; font-weight: 700; font-size: 1.4em;" href="testimonial.html"><mark style="background-color: rgb(255, 255, 255); border-radius: 10px; padding: 15px;">Testimonial</mark></a>
+                
+            </div>
+        </div>
+        <div class="body5" id="clearfix">
+            <div class="body5-content">
+                <h2 class="h2-body5">
+                    Fun Facts:
+                </h2>
+                <p class="p1-body5">
+                    "When I'm not coding or designing, I enjoy staying up-to-date with the latest industry trends and helping other aspiring developers and designers through mentorship and freelance projects."
+                </p>
+            </div>
+        </div>
+        <div class="body6" id="clearfix">
+            <div class="body6-content">
+                <h1 class="h1-body6">
+                    Skills Overview
+                </h1>
+
+                <p class="p1-body6">
+                   
+                  <big style="font-weight: 700;">Full-Stack Web Development:</big> From front-end to back-end, I specialize in creating responsive, interactive websites that provide seamless user experiences across all devices.
+                  <br><br>
+                  <big style="font-weight: 700;">Graphic Design:</big> I create stunning visuals for branding, social media, and print. From logos to posters, my designs are both beautiful and effective.
+                  <br><br>
+                  <big style="font-weight: 700;">Video Editing:</big> Whether it’s for marketing, social media, or personal projects, I craft videos that tell a story and keep viewers engaged.
+
+                </p>
+            
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <!--footer-->
+
+
+
+
+
+
+    <footer>
+    <div class="footer-container">
+        <!-- Contact Information -->
+        <div class="footer-section contact-info">
+            <h3>Contact Information</h3>
+            <p><i class="fas fa-map-marker-alt"></i> 984-50400 Busia</p>
+            <p><i class="fas fa-phone-alt"></i> +254 114 266 824</p>
+            <p><i class="fas fa-envelope"></i> lusimboelijah@gmail.com</p>
+            <p><i class="fas fa-clock"></i> Open 24/7</p>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="footer-section footer-nav">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            <li><a href="cart.html">Request for Service</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="testimonial.html">Testimonial</a></li>
+            </ul>
+        </div>
+
+        <!-- Privacy and Legal Information -->
+        <div class="footer-section legal-info">
+            <h3>Legal</h3>
+            <ul>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+                <li><a href="cookies.html">Cookie Policy</a></li>
+            </ul>
+        </div>
+
+        <!-- Call to Action (CTA) -->
+        <div class="footer-section cta">
+            <h3>Stay Connected</h3>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <br>
+                <button style="padding-right: 5px; test-align: left;" type="submit">Sign Up</button>
+            </form>
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61565844088548"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/lusimbo-elijah-a9baa0229/"><i class="fab fa-linkedin"></i></a>
+                <a href="https://wa.me/254114266824"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+
+        <!-- Payment Methods (for e-commerce) -->
+        <div class="footer-section payment-methods">
+            <h3>Accepted Payments</h3>
+            <div class="payment-icons">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-paypal"></i>
+                <i class="fab fa-cc-amex"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sitemap -->
+    <div class="footer-sitemap">
+        <h3>Sitemap</h3>
+        <ul>
+           <li><a href="index.html">Home</a></li>
+            <li><a href="cart.html">Request for Service</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="testimonial.html">Testimonial</a></li>
+        </ul>
+    </div>
+
+    <!-- Copyright & Branding -->
+    <div class="footer-bottom">
+        <p>© 2024 Lusimbo's Blog. All rights reserved.</p>
+        <a href="#" class="back-to-top">Back to Top</a>
+    </div>
+</footer>
+
+
+
+
+</div>
+
+ <!-- JavaScript to handle the mobile menu toggle -->
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const navLinks = document.getElementById('nav-links');
+
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuIcon.style.display = 'none';
+            closeIcon.style.display = 'block';
+        });
+
+        closeIcon.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuIcon.style.display = 'block';
+            closeIcon.style.display = 'none';
+        });
+    </script>
+
+
+
+</body>
+</html>
